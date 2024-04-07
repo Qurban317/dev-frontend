@@ -1,0 +1,7 @@
+{
+  "name": "on-list",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
