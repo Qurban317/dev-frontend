@@ -1,20 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <app-header></app-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="banner">
+  <img src="../../assets/signup_banner.jpg" alt="sign up"/>
+ </div>
+<div class="container" >
+  
+  <div class="page_text">
+    <p>
+      Unlock a world of opportunities on our classifieds platform "onlist.ae" where your listings stand out. From the dynamic realms of cars and properties to the essential needs of jobs, maids, and furniture, not to mention specialized markets like car accessories and motors, our platform is your gateway to reaching a vast and engaged audience. Elevate your business and connect with potential buyers today. Register now to be part of a community where excellence meets exposure.
+    </p>
+   </div>
+   <div class="reg_form">
+    <h2 class="form_heading">Vendor application form</h2>
+    <ion-list>
+        <ion-item lines="none">
+          <ion-input label="First Name" ></ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input label="Last Name" ></ion-input>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <ion-input label="Mobile number" ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="Email" ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="Company name" ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input label="Job title" ></ion-input>
+        </ion-item>
+        <ion-item class="custom_select_list" lines="none">
+          <select class="custom_select">
+            <option>Real Estat</option>
+            <option>Motar</option>
+           </select>
+        </ion-item>
+       
+        
+        
+    </ion-list>
+    <ion-button class="submit_btn">Save Changes</ion-button>
+   </div>
   </div>
-</ion-content>
+  
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

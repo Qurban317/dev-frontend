@@ -1,0 +1,18 @@
+.main_header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 0 30px;
+    .logo{
+        img{
+            max-width: 75px;
+        }
+    }
+    ion-list{
+        display: flex;
+        margin-top: 10px;
+        li{
+            margin: 10px;
+        }
+    }
+}

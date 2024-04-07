@@ -24,3 +24,79 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap') ;
+
+.ion-page {
+    margin: auto;
+}
+ion-header.header-md {
+    box-shadow: none;
+}
+.banner {
+    img{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+body{
+    overflow-y: scroll;
+    position: static;
+    overscroll-behavior-y: auto;
+}
+:host {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: static !important;
+    contain: layout size style;
+    z-index: 0;
+}
+.hydrated {
+    visibility: inherit;
+    position: static;
+}
+.ion-page {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: inherit;
+    position: static;
+    flex-direction: column;
+    justify-content: space-between;
+    contain: layout size style;
+    z-index: 0;
+}
+.container{
+    max-width: 1440px;
+    margin: auto;
+}
+.input-label-placement-start.sc-ion-input-md-h .input-wrapper.sc-ion-input-md, .select-wrapper {
+    flex-direction: column !important;
+    border: 0;
+}
+:host(.select-label-placement-start) .select-wrapper {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: start;
+}
+:host(.select-label-placement-start) .select-wrapper {
+    -ms-flex-direction: row;
+    flex-direction: column;
+    text-align: start;
+    align-items: start;
+}
+  .native-wrapper, .select-wrapper-inner, .custom_select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 10px 0;
+    max-width: 97%;
+    min-width: 200px;
+}
+.item-inner{
+    border: 0 !important;
+}

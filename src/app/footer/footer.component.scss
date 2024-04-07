@@ -1,0 +1,30 @@
+footer{
+    background-image: url(../../assets/footer_bg.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    padding: 30px 30px;
+    flex-flow: column;
+    .footer_logo{
+        img{
+            max-width: 60px;
+        }
+    }
+    .footer_nav{
+        display: flex;
+            flex-flow: column;
+            .md.list-md.hydrated {
+                display: flex;
+                justify-content: space-around;
+                background-color: transparent;
+            }
+        li{
+           color: #FFFFFF;
+        }
+    }
+    .copyright{
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        margin: 30px;
+    }
+}
