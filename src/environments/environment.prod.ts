@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+	environmentName: "NDEV",
+	apiUrl: 'http://localhost:3000/v1/',
 };

@@ -1,0 +1,19 @@
+<button mat-icon-button class="close-button" disableRipple [mat-dialog-close]="false">
+  <mat-icon>close</mat-icon>
+</button>
+
+<h1 mat-dialog-title>
+  <strong>{{ title }}</strong>
+</h1>
+<mat-divider></mat-divider>
+<br />
+<div mat-dialog-content>{{ message }}</div>
+<br />
+<div mat-dialog-content>{{ description }}</div>
+<br />
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close [disableRipple]="true" [mat-dialog-close]="true">OK</button>
+  <button mat-stroked-button mat-dialog-close [disableRipple]="true" [mat-dialog-close]="false">Cancel</button>
+</mat-dialog-actions>
+<br />

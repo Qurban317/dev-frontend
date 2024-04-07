@@ -1,0 +1,66 @@
+::ng-deep .mat-dialog-content {
+  font-size: 16px !important;
+  font-family: bookmania !important;
+  color: #918b88;
+}
+
+.mat-icon {
+  color: #918b88;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 1em;
+}
+::ng-deep .mat-dialog-container {
+  width: 480px !important;
+  padding: 1rem !important;
+  background: #f8f6f2 !important;
+  border-radius: 6px !important;
+  box-shadow: none;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+::ng-deep .mat-dialog-title {
+  font-size: 16px;
+  font-family: bookmania !important;
+  font-weight: 400;
+  line-height: 19px;
+  display: block;
+  color: #514d4a;
+}
+
+::ng-deep .mat-divider {
+  color: #514d4a;
+  padding-top: 1rem !important;
+}
+::ng-deep .mat-stroked-button {
+  border-color: #6c757d;
+  font-family: Bookmania !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  background: #f8f6f2 !important;
+  margin-right: 0.25rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+::ng-deep .mat-button-focus-overlay {
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-button:hover .mat-button-focus-overlay {
+  opacity: 0 !important;
+}
+
+.close-button {
+  float: right;
+  top: -10px;
+  right: -24px;
+}
+
+button:focus {
+  outline: none;
+  border: 0px;
+}
