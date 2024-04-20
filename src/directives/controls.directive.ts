@@ -1,12 +1,24 @@
-import { Directive, Optional, Host, ComponentRef, ViewContainerRef, ComponentFactoryResolver, Input, OnInit, ElementRef, Inject } from '@angular/core';
+/* eslint-disable @angular-eslint/directive-selector */
+import {
+  Directive,
+  Optional,
+  Host,
+  ComponentRef,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Input,
+  OnInit,
+  ElementRef,
+  Inject,
+} from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { FORM_ERRORS } from '../constants/form-errors';
 import { FormSubmitDirective } from './form-submit.directive';
 import { merge, Observable, fromEvent, EMPTY } from 'rxjs';
 import { ControlErrorComponent } from '../shared/control-error/control-error.component';
 import { ControlErrorContainerDirective } from './control-error-container.directive';
 import { shareReplay } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { FORM_ERRORS } from 'src/shared/constants/form-errors';
 
 @Directive({
   selector: '[formControl], [formControlName]',
@@ -28,9 +40,13 @@ export class ControlErrorsDirective implements OnInit {
     private host: ElementRef<HTMLFormElement>,
     private controlDir: NgControl
   ) {
-    this.container = controlErrorContainer ? controlErrorContainer.vcr : this.vcr;
+    this.container = controlErrorContainer
+      ? controlErrorContainer.vcr
+      : this.vcr;
     this.submit$ = this.form ? this.form.submit$ : EMPTY;
-    this.blur$ = this.form ? fromEvent(this.element, 'blur').pipe(shareReplay(1)) : EMPTY;
+    this.blur$ = this.form
+      ? fromEvent(this.element, 'blur').pipe(shareReplay(1))
+      : EMPTY;
   }
 
   private get element() {
@@ -39,12 +55,15 @@ export class ControlErrorsDirective implements OnInit {
 
   ngOnInit() {
     merge(this.submit$, this.blur$).subscribe(() => {
+    
       const controlErrors = this.control?.errors;
+      // console.log('ONerror  :: ',   this.control);
 
       if (controlErrors) {
         const firstKey = Object.keys(controlErrors)[0];
         const getError = this.errors[firstKey];
-        const text = this.customErrors[firstKey] || getError(controlErrors[firstKey]);
+        const text =
+          this.customErrors[firstKey] || getError(controlErrors[firstKey]);
         this.setError(text);
       } else if (this.ref) {
         this.setError('');
@@ -58,15 +77,20 @@ export class ControlErrorsDirective implements OnInit {
 
   private setError(text: string) {
     if (!this.ref) {
-      const factory = this.resolver.resolveComponentFactory(ControlErrorComponent);
+      const factory = this.resolver.resolveComponentFactory(
+        ControlErrorComponent
+      );
       this.ref = this.container.createComponent(factory);
     }
-
+    
     this.ref.instance.text = text;
     // Move the error message next to the closing tag of the mat-form-field
-    const matFormField = this.element.closest('mat-form-field');
+    const matFormField = this.element.closest('ion-input');
     if (matFormField) {
-      matFormField.insertAdjacentElement('afterend', this.ref.location.nativeElement);
+      matFormField.insertAdjacentElement(
+        'afterend',
+        this.ref.location.nativeElement
+      );
     }
   }
 }

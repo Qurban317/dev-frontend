@@ -32,35 +32,29 @@ export class HomePage implements OnInit {
    */
   ngOnInit(): void {
     this.form = this.fb.group({
-      first_name: ['', { validators: [Validators.minLength(1)] }],
-      last_name: ['', { validators: [Validators.minLength(1)] }],
+      first_name: ['', [Validators.required, Validators.minLength(1)]],
+      last_name: ['', [Validators.required, Validators.minLength(1)]],
       email: [
         '',
-        {
-          validators: Validators.compose([
-            Validators.pattern(Pattern.EMAIL_REGEX),
-          ]),
-        },
+        [Validators.required, Validators.pattern(Pattern.EMAIL_REGEX)],
       ],
       phone_number: [
         '',
-        {
-          validators: [
-            Validators.minLength(10),
-            Validators.pattern(
-              /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s.]{1}[/0-9]{3}[-\s.]{1}[/0-9]{4}|^[+]*[0-9]{10}/
-            ),
-          ],
-        },
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.pattern(
+            /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s.]{1}[/0-9]{3}[-\s.]{1}[/0-9]{4}|^[+]*[0-9]{10}/
+          ),
+        ],
       ],
       company_name: [
         '',
-        {
-          validators: [
-            Validators.pattern(Pattern.ALPHANUMERIC),
-            Validators.maxLength(200),
-          ],
-        },
+        [
+          Validators.required,
+          Validators.pattern(Pattern.ALPHANUMERIC),
+          Validators.maxLength(200),
+        ],
       ],
       job_title: [
         '',
@@ -73,13 +67,12 @@ export class HomePage implements OnInit {
       ],
       category_id: [
         '',
-        {
-          validators: [
-            Validators.minLength(5),
-            Validators.maxLength(5),
-            Validators.pattern(Pattern.NUMERIC),
-          ],
-        },
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(5),
+          Validators.pattern(Pattern.NUMERIC),
+        ],
       ],
     });
   }
@@ -88,18 +81,18 @@ export class HomePage implements OnInit {
    * onSubmit
    */
   public onSubmit() {
+    console.log(this.form);
 
     if (this.form.valid) {
-      console.log(this.form.value);
       const body = {
         ...this.form.value,
         category_id: parseInt(this.form.value.category_id),
       };
       this.api.httpPost('vendor/register', body).subscribe((data: any) => {
-        console.log('DATA :: ', data);
-
         if (data.code === 201) {
+          this.commonService.showSuccessToaster("Successfully added", "Success")
         } else {
+          this.commonService.showErrorToaster(data.message, "Success")
         }
       });
     }
@@ -110,11 +103,8 @@ export class HomePage implements OnInit {
    */
   public getCategories() {
     this.api.httpGet('category/all').subscribe((resp: any) => {
-      console.log('DATA :: ', resp);
-
       if (resp.code === 200) {
         this.categories = resp.data;
-      } else {
       }
     });
   }

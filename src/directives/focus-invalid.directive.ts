@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/directive-selector */
 import {
   Directive,
   OnInit,
@@ -29,6 +30,8 @@ export class FocusInvalidDirective implements OnInit {
     merge(this.submit$)
       .pipe()
       .subscribe((v) => {
+        console.log("V :: ", v);
+        
         if (!_.isNull(this.control?.errors)) {
           this.onFormSubmit();
         }
@@ -41,6 +44,8 @@ export class FocusInvalidDirective implements OnInit {
     if (invalidControl) {
       Control.focus();
     }
+    console.log("CONTROL :: ", Control);
+    
   }
   // Getter for getting control
   get control() {

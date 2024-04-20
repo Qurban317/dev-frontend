@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/directive-selector */
 import { Directive, ElementRef } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { shareReplay, tap } from 'rxjs/operators';

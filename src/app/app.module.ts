@@ -11,6 +11,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { HomePageModule } from './home/home.module';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
+import { ErrorsModule } from 'src/shared/errors.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,9 +28,27 @@ import { HomePageModule } from './home/home.module';
     HttpClientModule,
     ToastrModule.forRoot({ preventDuplicates: true }),
     AppRoutingModule,
-    HomePageModule
+    HomePageModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: MAT_DATE_LOCALE, useValue: 'en-US' }, // Adjust as per your locale
+    {
+      provide: MAT_DATE_FORMATS,
+      useValue: {
+        parse: {
+          dateInput: 'LL',
+        },
+        display: {
+          dateInput: 'DD-MM-YYYY',
+          monthYearLabel: 'MMM YYYY',
+          dateA11yLabel: 'LL',
+          monthYearA11yLabel: 'MMMM YYYY',
+        },
+      },
+    },
+    DatePipe,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

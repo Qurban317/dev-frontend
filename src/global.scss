@@ -100,3 +100,20 @@ body{
 .item-inner{
     border: 0 !important;
 }
+
+p.help.er-text {
+    color: #f16666;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-top: -24px !important;
+  }
+  
+  p.help.er-text::before {
+    content: '*';
+  }
+  
+  p.help.er-text.hide {
+    display: none;
+  }

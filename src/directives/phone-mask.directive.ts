@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, Input, ElementRef, Renderer2, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import * as _ from 'lodash';
 import { SubscriptionLike } from 'rxjs';
@@ -6,7 +6,7 @@ import { SubscriptionLike } from 'rxjs';
 @Directive({
   selector: '[appPhoneMask]',
 })
-export class PhoneMaskDirective {
+export class PhoneMaskDirective implements OnDestroy, OnInit {
   private _phoneControl: AbstractControl | undefined;
   private _preValue: string | undefined;
 

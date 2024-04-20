@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ErrorsModule } from 'src/shared/errors.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FooterComponent } from '../footer/footer.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ErrorsModule
   ],
   declarations: [HomePage, HeaderComponent, FooterComponent]
 })
