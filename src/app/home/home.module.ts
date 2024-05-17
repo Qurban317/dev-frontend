@@ -19,6 +19,6 @@ import { ErrorsModule } from 'src/shared/errors.module';
     ReactiveFormsModule,
     ErrorsModule
   ],
-  declarations: [HomePage, HeaderComponent, FooterComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

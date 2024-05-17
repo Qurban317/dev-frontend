@@ -1,14 +1,20 @@
 <header>
   <div class="main_header">
-    <div class="logo">
+    <div class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active" >
       <img src="../../assets/logo.png"  alt="logo"/>
     </div>
     <div class="navbar">
       <ion-list>
-       <li>About Us</li>
-       <li>Register</li>
+       <li>
+        <span [routerLink]="['/about-us']" routerLinkActive="router-link-active" >About</span>
+        </li>
+       <li>
+        <span [routerLink]="['/vendor-register']" routerLinkActive="router-link-active" >Register</span>
+        
+      </li>
        <li>Contact Us</li>
       </ion-list>
+      
     </div>
   </div>
 </header>

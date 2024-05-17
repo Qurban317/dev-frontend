@@ -1,0 +1,46 @@
+.page_text {
+    font-size: 20px;
+    @media(max-width: 768px){
+      font-size: 18px;
+    padding: 20px;
+    }
+  }
+  
+  .reg_form {
+    max-width: 550px;
+    margin: 40px auto;
+    position: relative;
+    .form_heading {
+      font-size: 28px;
+      font-weight: 600;
+      margin-left: 10px;
+      color: var(--ion-color-primary);
+  }
+    .custom_select_list {
+      position: relative;
+      padding-top: 20px;
+  
+      &:before {
+        content: 'Feild';
+        position: absolute;
+        top: 0;
+        font-size: 16px;
+        color: #292929;
+        left: 19px;
+      }
+    }
+  
+    .submit_btn {
+      margin: 0 16px 15px;
+      font-size: 18px;
+      /* padding: 14px; */
+      text-transform: capitalize;
+      .button-inner {
+        padding: 7px 0;
+    }
+    }
+  }
+  
+  .reg_form ion-select-popover.popover-viewport.sc-ion-select-popover-md-h.sc-ion-select-popover-md-s.md.hydrated {
+    position: absolute;
+  }

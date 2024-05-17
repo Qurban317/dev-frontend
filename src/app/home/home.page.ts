@@ -69,8 +69,8 @@ export class HomePage implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(5),
+          //Validators.minLength(5),
+          //Validators.maxLength(5),
           Validators.pattern(Pattern.NUMERIC),
         ],
       ],
@@ -90,12 +90,13 @@ export class HomePage implements OnInit {
       };
       this.api.httpPost('vendor/register', body).subscribe((data: any) => {
         if (data.code === 201) {
-          this.commonService.showSuccessToaster("Successfully added", "Success")
+          this.commonService.showSuccessToaster("Successfully added", "Success");
         } else {
           this.commonService.showErrorToaster(data.message, "Success")
         }
       });
     }
+    
   }
 
   /**
@@ -105,6 +106,7 @@ export class HomePage implements OnInit {
     this.api.httpGet('category/all').subscribe((resp: any) => {
       if (resp.code === 200) {
         this.categories = resp.data;
+       
       }
     });
   }

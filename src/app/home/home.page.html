@@ -1,71 +1,28 @@
-<ion-header>
-  <app-header></app-header>
-</ion-header>
+
 
 <div class="banner">
-  <img src="../../assets/signup_banner.jpg" alt="sign up" />
+  <img src="../../assets/home_banner.png" alt="home banner" />
 </div>
 <div class="container">
-  <div class="page_text">
-    <p>
-      Unlock a world of opportunities on our classifieds platform "onlist.ae"
-      where your listings stand out. From the dynamic realms of cars and
-      properties to the essential needs of jobs, maids, and furniture, not to
-      mention specialized markets like car accessories and motors, our platform
-      is your gateway to reaching a vast and engaged audience. Elevate your
-      business and connect with potential buyers today. Register now to be part
-      of a community where excellence meets exposure.
-    </p>
-  </div>
-  <div class="reg_form">
-    <h2 class="form_heading">Vendor application form</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <ion-list>
-        <ion-item lines="none">
-          <ion-input
-            label="First Name"
-            formControlName="first_name"
-          ></ion-input>
-        </ion-item>
-        <ion-item lines="none">
-          <input label="Last Name" formControlName="last_name" />
-          <!-- <ion-input label="Last Name" formControlName="last_name"></ion-input> -->
-        </ion-item>
-        <ion-item lines="none">
-          <ion-input
-            label="Mobile number"
-            formControlName="phone_number"
-          ></ion-input>
-        </ion-item>
-        <ion-item lines="none">
-          <ion-input label="Email" formControlName="email"></ion-input>
-        </ion-item>
-        <ion-item lines="none">
-          <ion-input
-            label="Company name"
-            formControlName="company_name"
-          ></ion-input>
-        </ion-item>
-        <ion-item lines="none">
-          <ion-input label="Job title" formControlName="job_title"></ion-input>
-        </ion-item>
-        <ion-item class="custom_select_list" lines="none">
-          <select class="custom_select" formControlName="category_id">
-            <option value="" disabled></option>
-            <option
-              *ngFor="let option of categories"
-              [value]="option.category_id"
-            >
-              {{ option.name }}
-            </option>
-          </select>
-        </ion-item>
-      </ion-list>
-      <ion-button class="submit_btn" type="submit">Save Changes</ion-button>
-    </form>
-  </div>
+  <section class="gray_sec">
+    <h1>UNDER CONSTRUCTION</h1>
+    <h2>SITE NEARLY READY</h2>
+    <img src="../../assets/progress_img.png" alt="UNDER CONSTRUCTION" />
+  </section>
+  
+  
 </div>
-
-<ion-footer>
-  <app-footer></app-footer>
-</ion-footer>
+<section class="services_sec">
+  <div class="container">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="../../assets/services-img.png" alt="services" />
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/services.png" alt="services" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</section>
